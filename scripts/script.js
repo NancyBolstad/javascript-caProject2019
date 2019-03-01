@@ -79,7 +79,7 @@ document.getElementById("searchButton").addEventListener("click", function () {
 function cardFilter(jsonObject){
   //get the value from the search text box
   const userInput=document.getElementById("search").value;
-  //Filter through all the results by the value that was in the textbox. If it finds any results it should be added to a new array and the new array.
+  //Filter through all the results by the value that was in the textbox. If it finds any results it should be added to the result array.
   const result=jsonObject.filter(function(element){
       return (element.name==userInput);
   });
