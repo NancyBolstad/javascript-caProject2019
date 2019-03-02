@@ -1,4 +1,3 @@
-const apiURL = "https://api.magicthegathering.io/v1/cards";
 const container = document.getElementById("cards");
 
 makeAPICall(generateCards);
@@ -6,10 +5,11 @@ makeAPICall(generateCards);
 
 //Reusable API calling function for executing multiple AJAX tasks. Refer to: https://www.w3schools.com/xml/ajax_xmlhttprequest_response.asp
 function makeAPICall(callback) {
+  const apiURL = "https://api.magicthegathering.io/v1/cards";
+
   //Connect to the URL provided
   var request = new XMLHttpRequest();
   request.open("GET", apiURL, true);
-
   request.onload = function () {
     //Convert the results to JSON format
     var data = JSON.parse(request.response);
