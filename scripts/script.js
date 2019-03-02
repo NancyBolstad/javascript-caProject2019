@@ -4,9 +4,9 @@ makeAPICall(generateCards);
 //Reusable API calling function for executing multiple AJAX tasks.
 function makeAPICall(doThisAfterRequest) {
   const apiURL = "https://api.magicthegathering.io/v1/cards";
+  var request = new XMLHttpRequest();
 
   //Connect to the URL provided
-  var request = new XMLHttpRequest();
   request.open("GET", apiURL, true);
   request.onload = function () {
     //Convert the results to JSON format
@@ -24,6 +24,7 @@ function makeAPICall(doThisAfterRequest) {
 //Create a function that takes the JSON Object as an argument, and can be used for displaying cards
 function generateCards(jsonObject) {
   const container = document.getElementById("cards");
+
   //Used the following keys to create cards: name, imageUrl and id.
   jsonObject.forEach(function (element) {
     const newCard = document.createElement("div");
@@ -57,13 +58,13 @@ function generateCards(jsonObject) {
     newCardContainer.appendChild(h4);
     newCardContainer.appendChild(cardIMG);
     newCardContainer.appendChild(viewMore);
-
   });
 }
 
 //The search button will trigger a click event.   
 document.getElementById("searchButton").addEventListener("click", function () {
-  const cardsContainer=document.getElementById("cards");
+  const cardsContainer = document.getElementById("cards");
+  
   if (document.getElementById("search").value == "" || document.getElementById("search").value == null) {
     alert("Input cannot be empty, try again!");
   } else {
@@ -94,7 +95,7 @@ function cardsFilter(jsonObject) {
 
 //A reusable function for display message to users.
 function showMessage(msg) {
-  const messageContainer=document.getElementById("cards");
+  const messageContainer = document.getElementById("cards");
   const errorMessage = document.createElement("h1");
   errorMessage.style.color = "red";
   errorMessage.textContent = msg;
