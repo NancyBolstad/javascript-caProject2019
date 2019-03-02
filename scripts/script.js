@@ -4,7 +4,7 @@ const container = document.getElementById("cards");
 makeAPICall(generateCards);
 
 
-//Reusable API calling function for executing multiple AJAX tasks, consisting of a function that executes the XMLHttpRequest object, and one callback function for each AJAX task. Refer to: https://www.w3schools.com/xml/ajax_xmlhttprequest_response.asp
+//Reusable API calling function for executing multiple AJAX tasks. Refer to: https://www.w3schools.com/xml/ajax_xmlhttprequest_response.asp
 function makeAPICall(callback) {
   //Connect to the URL provided
   var request = new XMLHttpRequest();
@@ -17,7 +17,7 @@ function makeAPICall(callback) {
       //Call the function from the method that returns the JSON data and pass in the JSON data.
       callback(data.cards);
     } else {
-      displayErrorInnerHTML("Gah, something went wrong!");
+      showMessage("Request failed.");
     }
   };
   request.send();
@@ -38,7 +38,7 @@ function generateCards(jsonObject) {
 
     const cardIMG = document.createElement("img");
     cardIMG.style.width = "100%";
-    //Test to see if the value is undefined, if the value is undefined, please use a placeholder image instead.
+    //Test to see if the imageUrl value is undefined, if the value is undefined, please use a placeholder image instead.
     if (typeof element.imageUrl === "undefined") {
       cardIMG.src = "https://via.placeholder.com/223x310";
     } else {
@@ -72,27 +72,27 @@ document.getElementById("searchButton").addEventListener("click", function () {
       container.removeChild(container.firstChild);
     }
     //Make a call to the api get all the results back
-    makeAPICall(cardFilter);
+    makeAPICall(cardsFilter);
   }
 });
 
-function cardFilter(jsonObject){
+function cardsFilter(jsonObject) {
   //get the value from the search text box
-  const userInput=document.getElementById("search").value;
+  const valueToSearch = document.getElementById("search").value;
   //Filter through all the results by the value that was in the textbox. If it finds any results it should be added to the result array.
-  const result=jsonObject.filter(function(element){
-      return (element.name==userInput);
+  const result = jsonObject.filter(function (element) {
+    return (element.name == valueToSearch);
   });
 
   //Display the searching result. If the application doesn’t find any results a suitable message should be displayed.
-  if(result.length>0){
+  if (result.length > 0) {
     generateCards(result);
-  }else{
-    displayErrorInnerHTML("Card does not exist.");
+  } else {
+    showMessage("The card's name does not exist.");
   }
 }
 
-function displayErrorInnerHTML(msg) {
+function showMessage(msg) {
   const errorMessage = document.createElement("h1");
   errorMessage.style.color = "red";
   errorMessage.textContent = msg;
