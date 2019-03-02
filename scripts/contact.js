@@ -59,6 +59,6 @@ document.getElementById("submitContact").addEventListener("click", function vali
 
     //Only submit the form when all input has been validated.
     if (checkFirstName() && checkLastName() && checkPhone() && checkEmail()) {
-        alert("Great! Your contact information has been validated. Form has been submitted.");
+        alert("Great! Your contact information has been validated now.");
     }
 });
