@@ -1,9 +1,7 @@
-const container = document.getElementById("cards");
-
 makeAPICall(generateCards);
 
 
-//Reusable API calling function for executing multiple AJAX tasks. Refer to: https://www.w3schools.com/xml/ajax_xmlhttprequest_response.asp
+//Reusable API calling function for executing multiple AJAX tasks.
 function makeAPICall(doThisAfterRequest) {
   const apiURL = "https://api.magicthegathering.io/v1/cards";
 
@@ -25,6 +23,7 @@ function makeAPICall(doThisAfterRequest) {
 
 //Create a function that takes the JSON Object as an argument, and can be used for displaying cards
 function generateCards(jsonObject) {
+  const container = document.getElementById("cards");
   //Used the following keys to create cards: name, imageUrl and id.
   jsonObject.forEach(function (element) {
     const newCard = document.createElement("div");
@@ -64,12 +63,13 @@ function generateCards(jsonObject) {
 
 //The search button will trigger a click event.   
 document.getElementById("searchButton").addEventListener("click", function () {
+  const cardsContainer=document.getElementById("cards");
   if (document.getElementById("search").value == "" || document.getElementById("search").value == null) {
     alert("Input cannot be empty, try again!");
   } else {
     //First, delete all the HTML inside the div that has the ID “cards” attached to it.
-    while (container.hasChildNodes()) {
-      container.removeChild(container.firstChild);
+    while (cardsContainer.hasChildNodes()) {
+      cardsContainer.removeChild(cardsContainer.firstChild);
     }
     //Make a call to the api get all the results back
     makeAPICall(cardsFilter);
@@ -94,8 +94,9 @@ function cardsFilter(jsonObject) {
 
 //A reusable function for display message to users.
 function showMessage(msg) {
+  const messageContainer=document.getElementById("cards");
   const errorMessage = document.createElement("h1");
   errorMessage.style.color = "red";
   errorMessage.textContent = msg;
-  container.appendChild(errorMessage);
+  messageContainer.appendChild(errorMessage);
 }
