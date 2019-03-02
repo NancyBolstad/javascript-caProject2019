@@ -1,5 +1,4 @@
-makeAPICall(generateCards);
-
+window.onload=makeAPICall(generateCards);
 
 //Reusable API calling function for executing multiple AJAX tasks.
 function makeAPICall(doThisAfterRequest) {

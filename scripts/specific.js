@@ -64,4 +64,4 @@ function testQueryStringValue() {
     }
 }
 
-testQueryStringValue();
+window.onload=testQueryStringValue();
