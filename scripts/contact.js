@@ -9,7 +9,7 @@ document.getElementById("submitContact").addEventListener("click", function vali
     //RFC2822 standards email validation, refer to:https://regexr.com/2rhq7
     var emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
     //Regular expression for special number format: xxx xxx xxxx OR xxx-xxx-xxxx OR xxx.xxx.xxxx
-    var phoneRegex = /(\d{3}\s\d{3}\s\d{4})|(\d{3}\.\d{3}\.\d{4})|(\d{3}-\d{3}-\d{4})/g;
+    var phoneRegex = /(^\d{3}\s\d{3}\s\d{4}$)|(^\d{3}\.\d{3}\.\d{4}$)|(^\d{3}-\d{3}-\d{4}$)/;
 
 
     //Validate name, last name, email and phone numbers and display display error messages if there is an issue with the values for each textbox respectively. If the value of the textbox is valid, hide the error message.  
