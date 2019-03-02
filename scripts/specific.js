@@ -49,7 +49,7 @@ function getSpecific() {
             cardDetailsContainer.appendChild(colors);
 
         } else {
-            alert("Gah, it's not working!");
+            alert("Request failed.");
         }
     };
     request.send();
