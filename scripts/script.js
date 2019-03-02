@@ -4,7 +4,7 @@ makeAPICall(generateCards);
 
 
 //Reusable API calling function for executing multiple AJAX tasks. Refer to: https://www.w3schools.com/xml/ajax_xmlhttprequest_response.asp
-function makeAPICall(callback) {
+function makeAPICall(doThisAfterRequest) {
   const apiURL = "https://api.magicthegathering.io/v1/cards";
 
   //Connect to the URL provided
@@ -15,7 +15,7 @@ function makeAPICall(callback) {
     var data = JSON.parse(request.response);
     if (request.status >= 200 && request.status < 400) {
       //Call the function from the method that returns the JSON data and pass in the JSON data.
-      callback(data.cards);
+      doThisAfterRequest(data.cards);
     } else {
       showMessage("Request failed.");
     }
@@ -23,7 +23,7 @@ function makeAPICall(callback) {
   request.send();
 }
 
-//Create a function, that takes the JSON Object as an argument.
+//Create a function that takes the JSON Object as an argument, and can be used for displaying cards
 function generateCards(jsonObject) {
   //Used the following keys to create cards: name, imageUrl and id.
   jsonObject.forEach(function (element) {
@@ -77,9 +77,9 @@ document.getElementById("searchButton").addEventListener("click", function () {
 });
 
 function cardsFilter(jsonObject) {
-  //get the value from the search text box
+  //Get the string value from the search text box
   const valueToSearch = document.getElementById("search").value;
-  //Filter through all the results by the value that was in the textbox. If it finds any results it should be added to the result array.
+  //Filter through all the results. If it finds any results it should be added to the result array.
   const result = jsonObject.filter(function (element) {
     return (element.name == valueToSearch);
   });
@@ -92,6 +92,7 @@ function cardsFilter(jsonObject) {
   }
 }
 
+//A reusable function for display message to users.
 function showMessage(msg) {
   const errorMessage = document.createElement("h1");
   errorMessage.style.color = "red";
