@@ -5,15 +5,14 @@ window.onload = function alterWords() {
     const text = document.getElementById("aboutText").innerHTML;
     const textAfterReplace = text.replace(/Magic/g, "Something");
     document.getElementById("aboutText").innerHTML = textAfterReplace;
-
-
-    //Toggle display: block and display none on the div with the “moreInfoContent” ID attached to it. 
-    document.getElementById("moreInfoTrigger").addEventListener("click", function () {
-        const isHidden = document.getElementById("moreInfoContent").style.display;
-        if (isHidden === "none") {
-            document.getElementById("moreInfoContent").style.display = "block";
-        } else {
-            document.getElementById("moreInfoContent").style.display = "none";
-        }
-    });
 };
+
+//Toggle display: block and display none on the div with the “moreInfoContent” ID attached to it. 
+document.getElementById("moreInfoTrigger").addEventListener("click", function () {
+    const isHidden = document.getElementById("moreInfoContent").style.display;
+    if (isHidden === "none") {
+        document.getElementById("moreInfoContent").style.display = "block";
+    } else {
+        document.getElementById("moreInfoContent").style.display = "none";
+    }
+});
