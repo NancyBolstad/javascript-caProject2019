@@ -47,7 +47,6 @@ function getSpecific() {
             cardDetailsContainer.appendChild(about);
             cardDetailsContainer.appendChild(rarity);
             cardDetailsContainer.appendChild(colors);
-
         } else {
             alert("Request failed.");
         }

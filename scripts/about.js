@@ -10,6 +10,7 @@ function replaceWords() {
 //Toggle display: block and display none on the div with the “moreInfoContent” ID attached to it. 
 document.getElementById("moreInfoTrigger").addEventListener("click", function () {
     const isHidden = document.getElementById("moreInfoContent").style.display;
+    
     if (isHidden === "none") {
         document.getElementById("moreInfoContent").style.display = "block";
     } else {
