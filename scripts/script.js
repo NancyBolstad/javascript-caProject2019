@@ -1,7 +1,5 @@
 "use strict";
 
-makeAPICall(generateCards);
-
 //Reusable API calling function for executing multiple AJAX tasks.
 function makeAPICall(doThisAfterRequest) {
   const apiURL = "https://api.magicthegathering.io/v1/cards";
@@ -102,3 +100,5 @@ function showMessage(msg) {
   errorMessage.textContent = msg;
   messageContainer.appendChild(errorMessage);
 }
+
+makeAPICall(generateCards);

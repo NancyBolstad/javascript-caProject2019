@@ -1,8 +1,5 @@
 // refer to question 3 before development starts for scope document
 "use strict";
-
-replaceWords();
-
 function replaceWords() {
     //Replace the word “Magic” with the “Something” in all the text inside the div with “aboutText” ID attached to it.
     const text = document.getElementById("aboutText").innerHTML;
@@ -20,3 +17,5 @@ document.getElementById("moreInfoTrigger").addEventListener("click", function ()
         document.getElementById("moreInfoContent").style.display = "none";
     }
 });
+
+replaceWords();
