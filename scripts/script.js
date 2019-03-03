@@ -92,7 +92,7 @@ function cardsFilter(jsonObject) {
   }
 }
 
-//A reusable function for display message to users.
+//A reusable function for displaying message.
 function showMessage(msg) {
   const messageContainer = document.getElementById("cards");
   const errorMessage = document.createElement("h1");
