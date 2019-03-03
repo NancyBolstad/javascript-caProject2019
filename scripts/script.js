@@ -1,3 +1,5 @@
+"use strict";
+
 makeAPICall(generateCards);
 
 //Reusable API calling function for executing multiple AJAX tasks.

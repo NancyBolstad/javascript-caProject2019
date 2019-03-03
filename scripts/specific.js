@@ -1,4 +1,5 @@
 // refer to question 2 before development starts for scope document
+"use strict";
 
 // get URL query string
 function getQueryStringValue(key) {

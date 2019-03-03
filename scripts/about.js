@@ -1,6 +1,7 @@
 // refer to question 3 before development starts for scope document
+"use strict";
 
-window.onload=replaceWords();
+replaceWords();
 
 function replaceWords() {
     //Replace the word “Magic” with the “Something” in all the text inside the div with “aboutText” ID attached to it.

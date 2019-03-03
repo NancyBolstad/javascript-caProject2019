@@ -1,4 +1,5 @@
 // refer to question 4 before development starts for scope document
+"use strict";
 
 //Form validation only happens after a user clicks the submit button.
 document.getElementById("submitContact").addEventListener("click", function validateForm() {
