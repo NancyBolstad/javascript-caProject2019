@@ -65,7 +65,7 @@ function generateCards(jsonObject) {
 //The search button will trigger a click event.   
 document.getElementById("searchButton").addEventListener("click", function () {
   const cardsContainer = document.getElementById("cards");
-  
+
   if (document.getElementById("search").value == "" || document.getElementById("search").value == null) {
     alert("Input cannot be empty, try again!");
   } else {
