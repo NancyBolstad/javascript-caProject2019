@@ -1,15 +1,15 @@
-window.onload=makeAPICall(generateCards);
+makeAPICall(generateCards);
 
 //Reusable API calling function for executing multiple AJAX tasks.
 function makeAPICall(doThisAfterRequest) {
   const apiURL = "https://api.magicthegathering.io/v1/cards";
-  var request = new XMLHttpRequest();
+  const request = new XMLHttpRequest();
 
   //Connect to the URL provided
   request.open("GET", apiURL, true);
   request.onload = function () {
     //Convert the results to JSON format
-    var data = JSON.parse(request.response);
+    const data = JSON.parse(request.response);
     if (request.status >= 200 && request.status < 400) {
       //Call the function from the method that returns the JSON data and pass in the JSON data.
       doThisAfterRequest(data.cards);

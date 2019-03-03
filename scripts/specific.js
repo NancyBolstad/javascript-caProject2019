@@ -6,11 +6,11 @@ function getQueryStringValue(key) {
 }
 
 function getSpecific() {
-    // variable for the id
-    var id = getQueryStringValue("id");
+    // const variable for the id
+    const id = getQueryStringValue("id");
 
-    // Take the id variable, make an API call, but append the ID to end of the API Call.
-    var request = new XMLHttpRequest();
+    // Take the id constiable, make an API call, but append the ID to end of the API Call.
+    const request = new XMLHttpRequest();
     request.open("GET", "https://api.magicthegathering.io/v1/cards/" + id, true);
     request.onload = function () {
         const data = JSON.parse(request.response);
@@ -56,7 +56,7 @@ function getSpecific() {
 
 // Test to see if there is no query string. If there isn't, display a suitable message.
 function testQueryStringValue() {
-    var queryString = window.location.search;
+    const queryString = window.location.search;
     if (!queryString.toString()) {
         alert("Oops! There is no query string!");
     } else {
@@ -64,4 +64,4 @@ function testQueryStringValue() {
     }
 }
 
-window.onload=testQueryStringValue();
+testQueryStringValue();
