@@ -1,23 +1,14 @@
 "use strict";
 
 //Reusable API calling function for executing multiple AJAX tasks.
-function makeAPICall(doThisAfterRequest) {
-  const apiURL = "https://api.magicthegathering.io/v1/cards";
-  const request = new XMLHttpRequest();
-
-  //Connect to the URL provided
-  request.open("GET", apiURL, true);
-  request.onload = function () {
-    //Convert the results to JSON format
-    const data = JSON.parse(request.response);
-    if (request.status >= 200 && request.status < 400) {
-      //Call the function from the method that returns the JSON data and pass in the JSON data.
+async function makeAPICall(doThisAfterRequest) {
+  const url = "https://api.magicthegathering.io/v1/cards";
+    try {
+      const data= await (await fetch(url)).json();
       doThisAfterRequest(data.cards);
-    } else {
-      showMessage("Request failed.");
+    } catch (error) {
+      showMessage("Something went wrong!");
     }
-  };
-  request.send();
 }
 
 //Create a function that takes the JSON Object as an argument, and can be used for displaying cards
