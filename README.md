@@ -1,4 +1,8 @@
-# javascript-caProject2019
-A simple card game page
+# javascript-caProject2019 v2.0
 
-This card display webpage was built with the MTG API of magicthegathering.io.
+The updated version fixed and added following issues in the previours one:
+
+1. Written with JavaScript ES6+
+2. Support case insensitive search
+3. Add navigation to the card-specific page 
+
