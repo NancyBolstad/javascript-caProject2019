@@ -1,51 +1,54 @@
-html{
+html {
     height: 100%
 }
 
-body{
+body {
     background-color: white;
-     height: 100%
+    height: 100%;
 }
 
-header{
+header {
     padding: 10px;
     background-color: #3a99cd;
     color: #ffffff;
     margin-bottom: 30px;
 }
 
-.navbar-default{
+.navbar-default {
     background-color: transparent;
     border: none;
     color: white;
 }
 
-header h1{
+header h1 {
     display: inline-block;
     color: #ffffff;
 }
-header i{
+
+header i {
     display: inline-block;
     font-size: 30px;
     color: #ffffff;
 }
 
-.navbar-nav{
+.navbar-nav {
     float: right;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
     background-color: transparent;
     color: #ffffff;
     border-bottom: solid 3px white;
 
 }
 
-section{
+section {
     min-height: 750px;
 }
 
-footer{
+footer {
     background-color: #3a99cd;
     text-align: center;
     padding: 30px;
@@ -53,11 +56,11 @@ footer{
     margin-top: 30px;
 }
 
-.navbar-default .navbar-nav>li>a{
+.navbar-default .navbar-nav>li>a {
     color: white;
 }
 
-h3{
+h3 {
     width: 100%;
     background-color: rgba(58, 153, 205, 0.7);
     color: white;
@@ -67,7 +70,7 @@ h3{
     cursor: pointer;
 }
 
-input[type="text"]{
+input[type="text"] {
     width: 100%;
     border: solid 1px lightgrey;
     height: 45px;
@@ -75,7 +78,7 @@ input[type="text"]{
     outline: none;
 }
 
-button{
+button {
     height: 45px;
     background-color: #3a99cd;
     color: #ffffff;
@@ -86,17 +89,19 @@ button{
     font-size: 20px
 }
 
-.m-t-30{
+.m-t-30 {
     margin-top: 30px;
 }
-.relative{
+
+.relative {
     position: relative;
 }
 
-.float-right{
+.float-right {
     float: right;
 }
-.card-container{
+
+.card-container {
     border: solid 1px lightgrey;
     border-top: 10px solid #3a99cd;
     margin-top: 30px;
@@ -104,12 +109,12 @@ button{
     padding: 15px;
 }
 
-.card-container:hover{
-        box-shadow: 5px 5px 2.5px #888888;
-        cursor: pointer;
+.card-container:hover {
+    box-shadow: 5px 5px 2.5px #888888;
+    cursor: pointer;
 }
 
-.btn-success{
+.btn-success {
     background-color: #3a99cd;
     width: 100%;
     border-radius: 0px;
@@ -120,32 +125,32 @@ button{
     font-weight: bold;
 }
 
-.btn-success:hover{
+.btn-success:hover {
     background-color: darkgray;
 }
 
-.col-sm-12{
+.col-sm-12 {
     padding: 0px;
 }
 
-img{
+img {
     border-radius: 10px;
 }
 
-h1{
+h1 {
     margin: 0px;
 }
 
-h4{
+h4 {
     color: #3a99cd;
 }
 
-.about-supporting{
+.about-supporting {
     border: solid 1px darkgray;
     padding: 20px;
 }
 
-.error{
+.error {
     color: red;
     display: none;
 }
