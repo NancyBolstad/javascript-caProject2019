@@ -3,8 +3,9 @@
 
 function hasQueryString() {
   const pageParams = new URLSearchParams(window.location.search);
-  if (!pageParams.toString()) {
-    alert('Oops!');
+  const id = pageParams.get('id');
+  if (!pageParams.toString() || !id.toString()) {
+    alert('Empty query string! Redirecting you to the home page ...');
     window.location = './index.html';
   } else {
     const url = `https://api.magicthegathering.io/v1/cards/${pageParams.get(
