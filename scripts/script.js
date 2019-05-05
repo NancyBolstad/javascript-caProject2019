@@ -5,8 +5,7 @@ async function makeAPICall(doThisAfterRequest) {
   const url = 'https://api.magicthegathering.io/v1/cards';
   try {
     const data = await (await fetch(url)).json();
-    const { cards } = data;
-    doThisAfterRequest(cards);
+    doThisAfterRequest(data.cards);
   } catch (error) {
     showMessage('Something went wrong!');
   }

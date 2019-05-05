@@ -27,28 +27,29 @@ async function fetchCard(url, doSomeThing) {
 function showCard(card) {
   const imgContainer = document.getElementById('cardImage');
   const cardDetailsContainer = document.getElementById('cardDetails');
+  const { name, imageUrl, rarity, colors, originalText } = card;
 
   //Append the image to the div called “cardImage”, set the width of the image to 100%.
   const cardIMG = document.createElement('img');
   cardIMG.style.width = '100%';
   //Test to see if the imageUrl value is undefined, if the value is undefined, use the placeholder image instead
   if (typeof card.imageUrl != 'undefined') {
-    cardIMG.src = card.imageUrl;
+    cardIMG.src = imageUrl;
   } else {
     cardIMG.src = 'https://via.placeholder.com/223x310';
   }
 
   const h2 = document.createElement('h2');
-  h2.textContent = card.name;
+  h2.textContent = name;
 
   const about = document.createElement('div');
-  about.innerHTML = `<b>About: </b>${card.text}`;
+  about.innerHTML = `<b>About: </b>${originalText}`;
 
-  const rarity = document.createElement('div');
-  rarity.innerHTML = `<b>Rarity: </b> ${card.rarity}`;
+  const rarityInfo = document.createElement('div');
+  rarityInfo.innerHTML = `<b>Rarity: </b> ${rarity}`;
 
-  const colors = document.createElement('div');
-  colors.innerHTML = `<b>Colors: </b>${card.colors}`;
+  const colorsInfo = document.createElement('div');
+  colorsInfo.innerHTML = `<b>Colors: </b>${colors}`;
 
   const returnLink = document.createElement('a');
   returnLink.innerHTML = 'Back to the home page >>';
@@ -58,9 +59,17 @@ function showCard(card) {
   imgContainer.appendChild(cardIMG);
   cardDetailsContainer.appendChild(h2);
   cardDetailsContainer.appendChild(about);
-  cardDetailsContainer.appendChild(rarity);
-  cardDetailsContainer.appendChild(colors);
+  cardDetailsContainer.appendChild(rarityInfo);
+  cardDetailsContainer.appendChild(colorsInfo);
   cardDetailsContainer.appendChild(returnLink);
+}
+
+function showMessage(msg) {
+  const messageContainer = document.getElementById('cards');
+  const errorMessage = document.createElement('h1');
+  errorMessage.style.color = 'red';
+  errorMessage.textContent = msg;
+  messageContainer.appendChild(errorMessage);
 }
 
 hasQueryString();
