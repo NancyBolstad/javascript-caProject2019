@@ -19,25 +19,25 @@ function generateCards(cards) {
   //Used the following keys to create cards: name, imageUrl and id.
   cards.forEach(element => {
     const newCard = document.createElement('div');
+    const { name, imageUrl, id } = element;
     newCard.setAttribute('class', 'col-sm-4');
 
     const newCardContainer = document.createElement('div');
     newCardContainer.setAttribute('class', 'card-container');
 
     const h4 = document.createElement('h4');
-    h4.textContent = element.name;
+    h4.textContent = name;
 
     const cardIMG = document.createElement('img');
     cardIMG.style.width = '100%';
     //Test to see if the imageUrl value is undefined, if the value is undefined, please use a placeholder image instead.
-    if (typeof element.imageUrl === 'undefined') {
+    if (typeof imageUrl === 'undefined') {
       cardIMG.src = 'https://via.placeholder.com/223x310';
     } else {
-      cardIMG.src = element.imageUrl;
+      cardIMG.src = imageUrl;
     }
 
     const viewMore = document.createElement('a');
-    const { id } = element;
     viewMore.setAttribute('class', 'btn btn-success');
     viewMore.textContent = 'View More';
     //Passed in id as a query string in the URL.
