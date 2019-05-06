@@ -1,6 +1,6 @@
 # javascript-caProject2019 v2.0
 
-# Github page: https://nancybolstad.github.io/javascript-caProject2019/
+Github page: https://nancybolstad.github.io/javascript-caProject2019/
 
 The updated version has been improved from the original in the following ways:
 
